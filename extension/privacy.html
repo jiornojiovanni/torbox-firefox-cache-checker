@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — TorBox Cache Check</title>
+  </head>
+  <body>
+    <main>
+      <h1>TorBox Cache Check privacy policy</h1>
+      <p>Last updated: September 5, 2026</p>
+      <p>
+        TorBox Cache Check is an unofficial Firefox extension. It checks links
+        with TorBox when you ask it to.
+      </p>
+      <h2>What is sent to TorBox</h2>
+      <p>
+        Each check sends your TorBox API key and a download identifier to
+        https://api.torbox.app over HTTPS. For web links, the identifier is an
+        MD5 hash of the link. For magnets, it is the torrent info hash. The full
+        link and any other selected text are not sent by the cache-check
+        request. Hashing does not make a download identifier anonymous: TorBox
+        uses it to identify the download.
+      </p>
+      <p>
+        TorBox also receives your IP address and normal connection information.
+        TorBox processes these requests under its own policies. This extension
+        does not control TorBox's storage or retention of request data.
+      </p>
+      <h2>What stays in Firefox</h2>
+      <p>
+        Your API key is saved in local extension storage in this Firefox
+        profile, not Firefox Sync. Use “Forget key” in the popup to remove it.
+        Links and results are held temporarily while using the extension; it
+        does not save a history of checks.
+      </p>
+      <h2>Clipboard and page access</h2>
+      <p>
+        The clipboard is read only when you click “Paste &amp; check”.
+        Context-menu checks use the link or text you selected. The extension
+        does not scan pages or monitor your browsing history.
+      </p>
+      <h2>Other services</h2>
+      <p>
+        The extension has no analytics, advertising, or developer-operated data
+        collection server. Cache checks go directly to TorBox.
+      </p>
+    </main>
+  </body>
+</html>

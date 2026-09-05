@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "npm run typecheck && esbuild src/background.ts src/popup.ts src/torbox.ts --outdir=extension --bundle --platform=browser --format=esm --target=firefox128 --tsconfig=tsconfig.build.json --legal-comments=inline && prettier --write \"extension/*.js\"",
+    "build": "npm run typecheck && esbuild src/background.ts src/popup.ts src/torbox.ts --outdir=extension --bundle --platform=browser --format=esm --target=firefox140 --tsconfig=tsconfig.build.json --legal-comments=inline && prettier --write \"extension/*.js\"",
+    "lint": "web-ext lint --source-dir extension --warnings-as-errors",
+    "package": "npm run build && npm run lint && web-ext build --source-dir extension",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -13,7 +15,8 @@
     "@types/blueimp-md5": "2.18.2",
     "esbuild": "0.28.2",
     "prettier": "3.9.6",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "web-ext": "10.6.0"
   },
   "dependencies": {
     "blueimp-md5": "2.19.0"
