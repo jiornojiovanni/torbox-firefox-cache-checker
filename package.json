@@ -1,0 +1,21 @@
+{
+  "name": "torbox-firefox-cache-checker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && esbuild src/background.ts src/popup.ts src/torbox.ts --outdir=extension --bundle --platform=browser --format=esm --target=firefox128 --tsconfig=tsconfig.build.json --legal-comments=inline && prettier --write \"extension/*.js\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@types/blueimp-md5": "2.18.2",
+    "esbuild": "0.28.2",
+    "prettier": "3.9.6",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "blueimp-md5": "2.19.0"
+  }
+}

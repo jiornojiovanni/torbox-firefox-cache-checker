@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "TorBox Cache Check",
+  "version": "0.2.0",
+  "description": "Check selected, right-clicked or copied links in TorBox's cache.",
+  "permissions": ["storage", "menus", "clipboardRead"],
+  "host_permissions": ["https://api.torbox.app/*"],
+  "background": { "scripts": ["background.js"], "type": "module" },
+  "action": {
+    "default_title": "Check TorBox cache",
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  },
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cache-check@torbox-local.example",
+      "strict_min_version": "128.0"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TorBox Cache Check</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="icon.svg" width="36" height="36" alt="" />
+      <div>
+        <h1>TorBox cache</h1>
+        <p>Is your download ready?</p>
+      </div>
+    </header>
+    <form id="check-form">
+      <label for="link">Download link or magnet</label
+      ><textarea
+        id="link"
+        rows="3"
+        placeholder="Paste a link here…"
+        required
+      ></textarea>
+      <div class="buttons">
+        <button type="button" id="paste">Paste &amp; check</button
+        ><button type="submit" id="check">Check cache</button>
+      </div>
+    </form>
+    <section id="result" role="status" aria-live="polite">
+      <strong id="status">Ready to check</strong>
+      <p id="detail">Right-click a link or selected URL, or paste one above.</p>
+    </section>
+    <details id="settings">
+      <summary>API key &amp; settings</summary>
+      <form id="key-form">
+        <label for="key">TorBox API key</label
+        ><input
+          id="key"
+          type="password"
+          autocomplete="off"
+          placeholder="Enter your API key"
+        />
+        <div class="buttons">
+          <button type="submit">Save key</button
+          ><button type="button" id="forget">Forget key</button>
+        </div>
+        <p id="key-status" role="status"></p>
+      </form>
+      <p class="small">
+        Your key stays in this Firefox profile. Checks send the link’s hash to
+        TorBox. Clipboard is read only when you click Paste &amp; check.
+      </p>
+    </details>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
